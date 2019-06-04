@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { View, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native'
+import { KeyboardAvoidingView, View, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native'
 import {connect} from 'react-redux'
 import { addNewCard } from '../actions'
 
@@ -36,7 +36,7 @@ class AddCard extends Component {
 
     render() {
         return(
-            <View style={styles.container}>
+            <KeyboardAvoidingView behavior="padding" enabled style={styles.container}>
                 <View style={{flexDirection: 'row'}}>
                     <TextInput 
                         style={styles.inputText }
@@ -60,7 +60,7 @@ class AddCard extends Component {
                     </Text>
                 </TouchableOpacity>
 
-            </View>
+            </KeyboardAvoidingView>
         )
     }
 }

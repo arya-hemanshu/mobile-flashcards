@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
-import { View, 
+import { KeyboardAvoidingView,
             Text, 
             StyleSheet, 
             TextInput,
-            TouchableOpacity } from 'react-native'
+            TouchableOpacity,
+        View } from 'react-native'
 import {connect} from 'react-redux'
 import { addNewDeck } from '../actions'
 
@@ -33,7 +34,7 @@ class AddDeck extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <KeyboardAvoidingView behavior="padding" enabled style={styles.container}>
                 <Text style={styles.title}>
                     What is the title of your new Deck?
                 </Text>
@@ -53,7 +54,7 @@ class AddDeck extends Component {
                     </Text>
                 </TouchableOpacity>
 
-            </View>
+            </KeyboardAvoidingView>
         )
     }
 }
