@@ -16,7 +16,7 @@ import {createStore, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import Deck from './components/Deck'
 import { setNotification } from './_helper'
-import { FontAwesome } from '@expo/vector-icons'
+import { FontAwesome, Ionicons } from '@expo/vector-icons'
 
 export const FlashCardsStatusBar = ({backgroundColor, ...props}) => {
   return (
@@ -31,18 +31,18 @@ const RouteConfigs = {
     screen: DeckList,
     navigationOptions: {
       tabBarLabel: "Decks",
-      tabBarIcons: ({tintColor}) => {
-        <FontAwesome name='layer-group' size={30} color={tintColor}/>
-      }
+      tabBarIcon: ({tintColor}) => (
+        <Ionicons name='ios-bookmarks' size={30} color={tintColor}/>
+      )
     }
   },
   AddDeck: {
     screen: AddDeck,
     navigationOptions: ({navigation}) => ({
       tabBarLabel: "Add Deck",
-      tabBarIcons: ({tintColor}) => {
+      tabBarIcon: ({tintColor}) => (
         <FontAwesome name='plus-circle' size={30} color={tintColor} />
-      }
+      )
     })
   }
 }
